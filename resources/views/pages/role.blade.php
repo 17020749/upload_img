@@ -79,8 +79,8 @@ async function getListUser() {
                     data-hs-overlay="#modal-edit-user" >
                     </x-btn-edit>
                     <x-btn-delete
-                    @click="$dispatch('model-delete', {id:'${element.id}', email:'${element.name}', name:'${element.email}'})"
-                    data-hs-overlay="#modal-delete-user" >
+                    @click="$dispatch('delete', {dataDelete:{url:'/api/user/delete/${element.id}', message:'deleteUser'}})"
+                    data-hs-overlay="#modal-delete" >
                     </x-btn-delete>
                   </td>
                 </tr>`
@@ -97,16 +97,5 @@ async function getListUser() {
     }
     console.error('Error getting user data', error);
   }
-}
-  function getSanctumToken() {
-  const cookies = document.cookie.split(';');
-  for (let i = 0; i < cookies.length; i++) {
-    const cookie = cookies[i].trim();
-    if (cookie.startsWith('XSRF-TOKEN=')) {
-      const token = cookie.substring('XSRF-TOKEN='.length, cookie.length);
-      return token;
-    }
-  }
-  return null;
 }
 </script>

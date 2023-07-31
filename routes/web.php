@@ -1,7 +1,6 @@
 <?php
-
 use App\Http\Controllers\ClassroomController;
-use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ProfileController;
@@ -10,9 +9,6 @@ use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
-use App\Models\User;
-use App\Models\Role\Role;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,18 +19,11 @@ use App\Models\Role\Role;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-
-
-
-
-Route::middleware('auth:sanctum')->group(function () {
+Route::middleware('auth')->group(function () {
     Route::get('/', function () {
     return view('welcome');
     });
-    Route::get('/dashboard', [DashboardController::class, 'view'])->middleware('verified')->name('dashboard');
-    Route::patch('/dashboard', [DashboardController::class, 'formRequest'])->name('formRequest');
-    Route::get('/courses', [CoursesController::class, 'ViewCourses'])->name('courses');
+    Route::get('/courses', [CourseController::class, 'ViewCourses'])->name('courses');
     Route::get('/semester', [SemesterController::class, 'viewSemester'])->name('semester');
     Route::get('/department', [DepartmentController::class, 'viewDepartment'])->name('department');
     Route::get('/class', [ClassroomController::class, 'viewClass'])->name('class');
@@ -46,5 +35,4 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
 require __DIR__.'/auth.php';

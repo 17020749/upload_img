@@ -2,12 +2,11 @@
 
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\ClassroomController;
-use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
-use App\Models\Db\Semester;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;

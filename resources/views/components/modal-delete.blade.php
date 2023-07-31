@@ -1,4 +1,4 @@
-<div id="modal-delete" x-data="{dataDelete: {}}"  @model-delete.window="dataDelete=$event.detail.dataDelete" class="hs-overlay hidden w-full h-full fixed top-0 left-0 z-[60] overflow-x-hidden overflow-y-auto">
+<div id="modal-delete" x-data="{dataDelete: {}}"  @delete.window="dataDelete=$event.detail.dataDelete" class="hs-overlay hidden w-full h-full fixed top-0 left-0 z-[60] overflow-x-hidden overflow-y-auto">
   <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-14 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto">
     <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
       <div class="flex justify-between items-center py-3 px-4 border-b dark:border-gray-700">
@@ -18,10 +18,10 @@
         </div>
       </div>
       <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t dark:border-gray-700">
-        <button type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border-2 border-red-200 font-semibold text-red-500 hover:text-white hover:bg-red-500 hover:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-200 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800" data-hs-overlay="#modal-delete-user">
+        <button type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border-2 border-red-200 font-semibold text-red-500 hover:text-white hover:bg-red-500 hover:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-200 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800" data-hs-overlay="#modal-delete">
         Close
         </button>
-        <button type="submit"  @click="Delete(dataDelete)"  class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border-2 border-green-200 font-semibold text-green-500 hover:text-white hover:bg-green-500 hover:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-200 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
+        <button   @click="Delete(dataDelete)"  class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border-2 border-green-200 font-semibold text-green-500 hover:text-white hover:bg-green-500 hover:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-200 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
         Save
         </button>
       </div>
@@ -30,19 +30,16 @@
 </div>
 
 <script>
-  async function Delete(id) {
+  async function Delete(dataDelete) {
   try {
     const response = await $.ajax({
-      url: `/api/user/delete/${id}`,
+      url: dataDelete.url,
       method: 'DELETE',
       headers: {
         'Authorization': 'Bearer ' + token
       }
     });
-  getListUser()
-  .then(() => {
-     toastr.success(response.message);
-  })
+  chooseList(dataDelete.message,response);
   } catch (error) {
     if (error.responseJSON && error.responseJSON.message) {
       console.error('Error delete user:', error.responseJSON.message);
@@ -51,7 +48,50 @@
       console.error('Error delete user:', error);
     }
   }
-  HSOverlay.close(document.getElementById('modal-delete-user'));
-  
+  }
+  function chooseList(message,response){
+    switch(message) {
+  case 'deleteUser':
+      getListUser().then(() => {
+    HSOverlay.close(document.getElementById('modal-delete'));
+    toastr.success(response.message);
+  });
+    break;
+  case 'semester':
+    getListSemester().then(()=> {
+      HSOverlay.close(document.getElementById('modal-delete'));
+    toastr.success(response.message);
+    });
+    break;
+     case 'course':
+    getListCourse().then(()=> {
+      HSOverlay.close(document.getElementById('modal-delete'));
+    toastr.success(response.message);
+    });
+    break;
+     case 'department':
+    getListDepartment().then(()=> {
+      HSOverlay.close(document.getElementById('modal-delete'));
+    toastr.success(response.message);
+    });
+    break;
+     case 'classroom':
+    getListClassroom().then(()=> {
+      HSOverlay.close(document.getElementById('modal-delete'));
+    toastr.success(response.message);
+    });
+    break;
+      case 'teacher':
+    getListTeacher().then(()=> {
+      HSOverlay.close(document.getElementById('modal-delete'));
+    toastr.success(response.message);
+    });
+    break;
+  default:
+    getListStudent().then(()=> {
+      HSOverlay.close(document.getElementById('modal-delete'));
+    toastr.success(response.message);
+    });
+}
   }
 </script>

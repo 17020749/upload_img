@@ -25,7 +25,6 @@
   <!-- Author: FormBold Team -->
   <!-- Learn More: https://formbold.com -->
   <div class="mx-auto w-full max-w-[550px]">
-   
       <div class="-mx-3 flex flex-wrap">
         <div class="w-full px-3">
           <div class="mb-5">
@@ -36,8 +35,6 @@
               First Name
             </label>
             <input
-              
-            
               type="text"
               name="name"
               id="Name"
@@ -53,7 +50,6 @@
               Email
             </label>
             <input
-              
               type="text"
               name="email"
               id="email"
@@ -73,9 +69,7 @@
         </div>
       </div>
       <div>
-       
       </div>
-   
   </div>
 </div>
       </div>
@@ -92,8 +86,6 @@
   </div>
 </div>
 <script>
-
-
 $(document).ready(function() {
  $('#roles').select2(
  );
@@ -126,7 +118,6 @@ $(document).ready(function() {
           multiSelectRequired: "Chọn ít nhất một nhóm quyền"
         }
   },
- 
   submitHandler: function (form, event) {
       insertUser();
       event.preventDefault();
@@ -161,7 +152,5 @@ $(document).ready(function() {
       console.error('Error insert user:', error);
     }
   }
- 
-  
   }
 </script>

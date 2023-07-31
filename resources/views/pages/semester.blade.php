@@ -85,7 +85,7 @@ async function getListSemester() {
                    
                      @if(Auth::user()->check('Delete:Semester')) 
                       <x-btn-delete
-                    @click="$dispatch('model-delete', {id:'${element.id}', message:'semester'})"
+                    @click="$dispatch('delete', {dataDelete:{url:'/api/semester/${element.id}', message:'semester'}})"
                     data-hs-overlay="#modal-delete" >
                     </x-btn-delete>
                     @endif

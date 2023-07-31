@@ -7,21 +7,9 @@ use Illuminate\View\View;
 use App\Models\User;
 class DepartmentController extends Controller
 {
-    public function viewDepartment()
+    public function viewDepartment():View
     {
-     $user = User::all();
-$user = $user->map(function($item){
-    $listRole = $item->roles->map(function($role){
-        return $role->name;
-    });
-    $item->role = $listRole;
-    return $item;
-});
-
-// In kết quả
-print_r(json_encode($user));
-
-        // return view('pages.department');
+        return view('pages.department');
     }
 }
 

@@ -8,7 +8,7 @@ class ClassroomController extends Controller
 {
     public function viewClass(): View
     {
-        $listClass = Classroom::all();
-        return view('pages.class', ['listClass' => $listClass]);
+        // $listClass = Classroom::all();
+        return view('pages.class', );
     }
 }

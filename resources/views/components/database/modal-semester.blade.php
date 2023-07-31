@@ -43,8 +43,8 @@
               type="text"
               name="idSemester"
               id="idSemester"
-              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                x-bind:class="dataUpdate.id !== undefined?'bg-gray-200':''"
+              class="w-full rounded-md border border-[#e0e0e0] py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                x-bind:class="dataUpdate.id !== undefined?'bg-gray-300':''"
               />
           </div>
           </template>
