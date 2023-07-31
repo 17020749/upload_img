@@ -20,7 +20,7 @@
            
           </thead>
           <tbody>
-            
+            <h1 class="text-center">Continue</h1>
           </tbody>
         </table>
 
