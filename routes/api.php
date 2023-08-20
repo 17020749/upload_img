@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AuthTokenController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\CourseController;
@@ -24,6 +25,7 @@ use App\Models\User;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('/login',[AuthTokenController::class, 'login']);
 Route::middleware('auth:sanctum')->group(function(){
     //user
     Route::get('/user' ,[UserController::class, 'getListUser']);

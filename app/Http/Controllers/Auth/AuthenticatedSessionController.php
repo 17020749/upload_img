@@ -10,7 +10,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
-
+use Illuminate\Validation\ValidationException;
 class AuthenticatedSessionController extends Controller
 {
     /**
@@ -24,11 +24,19 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request, ValidateFormLogin $validateFormLogin): RedirectResponse
+    public function store(Request $request, ValidateFormLogin $validateFormLogin): RedirectResponse
     {
-        $request->authenticate();
+        if (! Auth::attempt($request->only('email', 'password'))) {
+            // RateLimiter::hit($this->throttleKey());
 
-         $request->session()->regenerate();
+            throw ValidationException::withMessages([
+                'checkLogin' => trans(__('Tên đăng nhập hoặc mật khẩu không chính xác')),
+            ]);
+        }
+         $user = Auth::user();
+         $listRole = $user->list();
+        $token = $user->createToken('api-token', $listRole->toArray())->plainTextToken;
+        session(['token' => $token]);
 
         return redirect()->intended('/courses');
     }
@@ -36,14 +44,9 @@ class AuthenticatedSessionController extends Controller
     /**
      * Destroy an authenticated session.
      */
-    public function destroy(Request $request): RedirectResponse
-    {
-        Auth::guard('web')->logout();
-
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
-
+    public function destroy(Request $request)
+    { 
+        $request->user()->tokens()->delete();
         return redirect('/');
     }
 }

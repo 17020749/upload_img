@@ -1,8 +1,15 @@
+<head>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>{{ config('app.name', 'Laravel') }}</title>
+        <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"> </script>
+    </head>
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('login') }}">
+    <form>
         @csrf
 
         <!-- Email Address -->
@@ -47,3 +54,36 @@
         </div>
     </form>
 </x-guest-layout>
+<script>
+    console.log(document.cookie);
+    document.querySelector('form').addEventListener('submit', function(event){
+        login();
+        event.preventDefault();
+    });
+  async  function login(){
+    try {
+        const response = await $.ajax({
+            url: 'api/login',
+            method: 'POST',
+            data: {
+                email: $('#email').val(),
+                password: $('#password').val(),
+            },
+            headers: {
+                'X-XSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        console.log(document.cookie);
+        localStorage.setItem('api_token', response.token);
+        window.location.href='/';        
+    }
+    catch(error){
+         if (error.responseJSON && error.responseJSON.message) {
+      console.error('Error delete user:', error.responseJSON.message);
+    //   toastr.error(error.responseJSON.message);
+    } else {
+      console.error('Error delete user:', error);
+    }
+    }
+    }
+</script>

@@ -25,13 +25,6 @@ class LoginRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
      */
-    public function rules(): array
-    {
-           return [
-           
-        ];
-      
-    }
 
     /**
      * Attempt to authenticate the request's credentials.
@@ -40,10 +33,10 @@ class LoginRequest extends FormRequest
      */
     public function authenticate(): void
     {
-        $this->ensureIsNotRateLimited();
+        // $this->ensureIsNotRateLimited();
 
-        if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
-            RateLimiter::hit($this->throttleKey());
+        if (! Auth::attempt($this->only('email', 'password'))) {
+            // RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
                 'checkLogin' => trans(__('Tên đăng nhập hoặc mật khẩu không chính xác')),
@@ -54,7 +47,7 @@ class LoginRequest extends FormRequest
         $token = $user->createToken('api-token', $listRole->toArray())->plainTextToken;
         session(['token' => $token]);
 
-        RateLimiter::clear($this->throttleKey());
+        // RateLimiter::clear($this->throttleKey());
     }
 
     /**

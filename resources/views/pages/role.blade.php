@@ -56,7 +56,7 @@
     </div>
 </x-app-layout>
 <script>
-  var token = '{{ session("token") }}';
+  var token = localStorage.getItem('api_token');
   getListUser();
 async function getListUser() {
   var html=``;

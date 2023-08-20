@@ -9,6 +9,7 @@ use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,8 +20,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::middleware('auth')->group(function () {
-    Route::get('/', function () {
+Route::middleware(['auth.token', 'auth:sanctum'])->group(function () {
+    Route::get('/', function (Request $request) {
     return view('welcome');
     });
     Route::get('/courses', [CourseController::class, 'ViewCourses'])->name('courses');
