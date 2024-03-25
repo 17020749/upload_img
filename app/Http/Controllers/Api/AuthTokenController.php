@@ -16,7 +16,7 @@ class AuthTokenController extends Controller
             $user = User::where('email', $request->email)->first();
             if(!$user) {
                 return response()->json(
-                    abort(401, 'Tài khoản không tồn tại')
+                    abort(401, 'Tài khoản không tồn tại, vui long thu lai')
                 );
             }
             else {
