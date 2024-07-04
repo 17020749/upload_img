@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "preline": "^1.9.0",
+        "swiper": "^11.1.4",
         "tw-elements": "^1.0.0-beta2",
         "vue-router": "^4.2.4"
     }
