@@ -15,196 +15,52 @@
             </div>
         </div>
           <!--HTML CODE-->
-        <section class="py-4" id="services">
-          <div class="md:container mx-auto ">
+          <section class="py-4" id="services">
+          <div class="md:container md:mx-auto ">
               <h2 class="text-3xl font-bold text-gray-800 mb-2 text-center">Một số hình ảnh decal xe đẹp</h2>
-            <div class="w-full relative ">
-            <div class="swiper multiple-slide-carousel swiper-container relative">
-            <div class="swiper-wrapper mb-16">
-              <div class="swiper-slide">
-                <div class=" rounded-2xl h-84 flex justify-center items-center">
+          <swiper-container class="mySwiper" init="false" >
+    <swiper-slide><div class=" rounded-2xl h-84 flex justify-center items-center">
                   <span class="text-2xl font-semibold text-indigo-600">
                   <div class="bg-white  shadow-md overflow-hidden px-1">
-                      <img src="/images/introduct16.jpeg" alt="wheat flour grinding"
+                      <img src="/images/introduct1.jpeg" alt="wheat flour grinding"
                           class="w-full h-64 object-cover">
                       <div class="p-6 text-center">
                           <h3 class="text-xl font-medium text-gray-800 mb-2">Wheat Flour Grinding</h3>
                       </div>
                   </div>
                   </span>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class=" rounded-2xl h-984 flex justify-center items-center">
+                </div></swiper-slide>
+    <swiper-slide><div class=" rounded-2xl h-84 flex justify-center items-center">
                   <span class="text-2xl font-semibold text-indigo-600">
-                  <div class="bg-white  shadow-md overflow-hidden">
-                      <img src="/images/introduct2.jpeg" alt="Coffee"
-                          class="w-full h-64 object-cover">
-                      <div class="p-6 text-center">
-                          <h3 class="text-xl font-medium text-gray-800 mb-2">Gram Flour Grinding</h3>
-                        
-                      </div>
-                  </div>
-                  </span>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class=" rounded-2xl h-84 flex justify-center items-center">
-                  <span class="text-2xl font-semibold text-indigo-600">
-                  <div class="bg-white  shadow-md overflow-hidden">
-                      <img src="/images/introduct3.jpeg" alt="Coffee"
-                          class="w-full h-64 object-cover">
-                      <div class="p-6 text-center">
-                          <h3 class="text-xl font-medium text-gray-800 mb-2">Jowar Flour Grinding</h3>
-                      </div>
-                  </div>
-                  </span>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class=" rounded-2xl h-84 flex justify-center items-center">
-                  <span class="text-2xl font-semibold text-indigo-600">
-                  <div class="bg-white  shadow-md overflow-hidden">
-                      <img src="/images/introduct2.jpeg" alt="Coffee"
-                          class="w-full h-64 object-cover">
-                      <div class="p-6 text-center">
-                          <h3 class="text-xl font-medium text-gray-800 mb-2">Gram Flour Grinding</h3>
-                        
-                      </div>
-                  </div>
-                  </span>
-                  
-                </div>
-                
-              </div>
-              <div class="swiper-slide">
-                <div class=" rounded-2xl h-84 flex justify-center items-center">
-                  <span class="text-2xl font-semibold text-indigo-600">
-                  <div class="bg-white shadow-md overflow-hidden px-1">
-                      <img src="/images/introduct5.jpeg" alt="wheat flour grinding"
+                  <div class="bg-white  shadow-md overflow-hidden px-1">
+                      <img src="/images/introduct1.jpeg" alt="wheat flour grinding"
                           class="w-full h-64 object-cover">
                       <div class="p-6 text-center">
                           <h3 class="text-xl font-medium text-gray-800 mb-2">Wheat Flour Grinding</h3>
                       </div>
                   </div>
                   </span>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class=" rounded-2xl h-984 flex justify-center items-center">
+                </div></swiper-slide>
+    <swiper-slide><div class=" rounded-2xl h-84 flex justify-center items-center">
                   <span class="text-2xl font-semibold text-indigo-600">
-                  <div class="bg-white rounded-lg shadow-md overflow-hidden px-1">
-                      <img src="/images/introduct6.jpeg" alt="Coffee"
-                          class="w-full h-64 object-cover">
-                      <div class="p-6 text-center">
-                          <h3 class="text-xl font-medium text-gray-800 mb-2">Gram Flour Grinding</h3>
-                        
-                      </div>
-                  </div>
-                  </span>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class=" rounded-2xl h-84 flex justify-center items-center">
-                  <span class="text-2xl font-semibold text-indigo-600">
-                  <div class="bg-white rounded-lg shadow-md overflow-hidden px-1">
-                      <img src="/images/introduct7.jpeg" alt="Coffee"
-                          class="w-full h-64 object-cover">
-                      <div class="p-6 text-center">
-                          <h3 class="text-xl font-medium text-gray-800 mb-2">Jowar Flour Grinding</h3>
-                      </div>
-                  </div>
-                  </span>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class=" rounded-2xl h-84 flex justify-center items-center">
-                  <span class="text-2xl font-semibold text-indigo-600">
-                  <div class="bg-white rounded-lg shadow-md overflow-hidden px-1">
-                      <img src="/images/introduct8.jpeg" alt="Coffee"
-                          class="w-full h-64 object-cover">
-                      <div class="p-6 text-center">
-                          <h3 class="text-xl font-medium text-gray-800 mb-2">Gram Flour Grinding</h3>
-                        
-                      </div>
-                  </div>
-                  </span>
-                  
-                </div>
-                
-              </div>
-              <div class="swiper-slide">
-                <div class=" rounded-2xl h-84 flex justify-center items-center">
-                  <span class="text-2xl font-semibold text-indigo-600">
-                  <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                      <img src="/images/introduct9.jpeg" alt="wheat flour grinding"
+                  <div class="bg-white  shadow-md overflow-hidden px-1">
+                      <img src="/images/introduct1.jpeg" alt="wheat flour grinding"
                           class="w-full h-64 object-cover">
                       <div class="p-6 text-center">
                           <h3 class="text-xl font-medium text-gray-800 mb-2">Wheat Flour Grinding</h3>
                       </div>
                   </div>
                   </span>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class=" rounded-2xl h-984 flex justify-center items-center">
-                  <span class="text-2xl font-semibold text-indigo-600">
-                  <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                      <img src="/images/introduct10.jpeg" alt="Coffee"
-                          class="w-full h-64 object-cover">
-                      <div class="p-6 text-center">
-                          <h3 class="text-xl font-medium text-gray-800 mb-2">Gram Flour Grinding</h3>
-                        
-                      </div>
-                  </div>
-                  </span>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class=" rounded-2xl h-84 flex justify-center items-center">
-                  <span class="text-2xl font-semibold text-indigo-600">
-                  <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                      <img src="/images/introduct11.jpeg" alt="Coffee"
-                          class="w-full h-64 object-cover">
-                      <div class="p-6 text-center">
-                          <h3 class="text-xl font-medium text-gray-800 mb-2">Jowar Flour Grinding</h3>
-                      </div>
-                  </div>
-                  </span>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class=" rounded-2xl h-84 flex justify-center items-center">
-                  <span class="text-2xl font-semibold text-indigo-600">
-                  <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                      <img src="/images/introduct12.jpeg" alt="Coffee"
-                          class="w-full h-64 object-cover">
-                      <div class="p-6 text-center">
-                          <h3 class="text-xl font-medium text-gray-800 mb-2">Gram Flour Grinding</h3>
-                        
-                      </div>
-                  </div>
-                  </span>
-                  
-                </div>
-                
-              </div>
-            </div>
-            <div class="absolute flex justify-center items-center m-auto left-0 right-0 w-fit bottom-12">
-              <button id="slider-button-left" class="swiper-button-prev group !p-2 flex justify-center items-center border border-solid border-indigo-600 !w-12 !h-12 transition-all duration-500 rounded-full  hover:bg-indigo-600 !-translate-x-16" data-carousel-prev>
-                <svg class="h-5 w-5 text-indigo-600 group-hover:text-white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M10.0002 11.9999L6 7.99971L10.0025 3.99719" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-              <button id="slider-button-right" class="swiper-button-next group !p-2 flex justify-center items-center border border-solid border-indigo-600 !w-12 !h-12 transition-all duration-500 rounded-full hover:bg-indigo-600 !translate-x-16" data-carousel-next>
-                <svg class="h-5 w-5 text-indigo-600 group-hover:text-white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M5.99984 4.00012L10 8.00029L5.99748 12.0028" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-            </div>
-            </div>
-          </div>
-        </section>
+                </div></swiper-slide>
+    <swiper-slide>Slide 4</swiper-slide>
+    <swiper-slide>Slide 5</swiper-slide>
+    <swiper-slide>Slide 6</swiper-slide>
+    <swiper-slide>Slide 7</swiper-slide>
+    <swiper-slide>Slide 8</swiper-slide>
+    <swiper-slide>Slide 9</swiper-slide>
+  </swiper-container>
+</div>
+</section>
         <section>
         <div class="container mx-auto ">
         </div>
@@ -212,6 +68,26 @@
     </div>
 </x-ui-layout>
 <style>
+  swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
     /* CSS Code */
     .swiper-wrapper {
       width: 100%;
@@ -221,32 +97,49 @@
       transition-timing-function: linear !important;
       position: relative;
       }
-      .swiper-pagination-bullet {
-      background: #4f46e5;
-      }
+
 </style>
 <script>
-       var swiper = new Swiper(".multiple-slide-carousel", {
-         loop: true,
-         slidesPerView: 2,
-         spaceBetween: 20,
-         navigation: {
-           nextEl: ".multiple-slide-carousel .swiper-button-next",
-           prevEl: ".multiple-slide-carousel .swiper-button-prev",
-         },
-         breakpoints: {
-          1200: {
-              slidesPerView: 4,
-              spaceBetween: 30
-          },
+  const swiperEl = document.querySelector('swiper-container')
+
+    const params = {
+      slidesPerView: 2,
+      breakpoints: {
           992: {
-              slidesPerView: 3,
-              spaceBetween: 30
+              slidesPerView: 4,
+              spaceBetween: 0
           },
           768: {
-              slidesPerView: 2,
+              slidesPerView: 3,
               spaceBetween: 0
           }
-        }
-       });
+    },
+      injectStyles: [`
+      .swiper-pagination-bullet {
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+        color: #000;
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      .swiper-pagination-bullet-active {
+        color: #fff;
+        background: #007aff;
+      }
+      `],
+      pagination: {
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (index + 1) + "</span>";
+        },
+      },
+    }
+
+    Object.assign(swiperEl, params)
+
+    swiperEl.initialize();
       </script>
