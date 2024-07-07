@@ -1,3 +1,19 @@
+ <style>
+        /* Custom styles */
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #e8e8e5;
+            z-index: 10;
+            display: none;
+        }
+
+        .fixed-header.active {
+            display: block;
+        }
+    </style>
 <!-- nav bar section -->
 <nav class="flex flex-wrap items-center justify-between p-3 bg-[#e8e8e5]">
 
