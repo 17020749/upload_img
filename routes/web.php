@@ -24,6 +24,9 @@ use Illuminate\Http\Request;
     Route::get('/', function (Request $request) {
     return view('welcome');
     });
+    Route::get('/pageTest', function (Request $request) {
+        return view('htmlTest');
+        });
     Route::get('/courses', [CourseController::class, 'ViewCourses'])->name('courses');
     Route::get('/semester', [SemesterController::class, 'viewSemester'])->name('semester');
     Route::get('/department', [DepartmentController::class, 'viewDepartment'])->name('department');
