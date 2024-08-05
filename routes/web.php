@@ -8,6 +8,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 /*
@@ -21,9 +22,11 @@ use Illuminate\Http\Request;
 |
 */
 
-    Route::get('/', function (Request $request) {
-    return view('welcome');
-    });
+    Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::post('/', [UploadController::class, 'upload'])->name('upload');
+    Route::get('/productdetail', function (Request $request) {
+        return view('pages.products.productdetail');
+        });
     Route::get('/pageTest', function (Request $request) {
         return view('htmlTest');
         });

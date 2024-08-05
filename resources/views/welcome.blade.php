@@ -15,119 +15,27 @@
           </div>
       </div> -->
           <!--HTML CODE-->
-      <section  id="services">
-        <div class="md:container md:mx-auto lg:px-20 2xl:px-40">
-          <div class=" p-1">
-            <!-- <h2 class="md:text-3xl font-bold  text-center">Một số sản phẩm nổi bật, bán chạy</h2> -->
-          </div>
-          <swiper-container class="mySwiper" init="false" >
-            <swiper-slide>
-             <div class="max-w-sm overflow-hidden shadow-lg">
-              <img class="w-full object-cover" src="/images/introduct1.jpeg" alt="Sunset in the mountains">
-              <div class="px-1 py-1">
-                <p class="text-gray-700 text-base">
-                  Lorem ipsum dolor sit amet 
-                </p>
-              </div>
-              <div class="px-1 pb-1">
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-              </div>
-              </div>
-            </swiper-slide>
-            <swiper-slide>
-             <div class="max-w-sm overflow-hidden shadow-lg">
-              <img class="w-full object-cover" src="/images/introduct2.jpeg" alt="Sunset in the mountains">
-              <div class="px-1 py-1">
-                <p class="text-gray-700 text-base">
-                  Lorem ipsum dolor sit amet 
-                </p>
-              </div>
-              <div class="px-1 pb-1">
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-              </div>
-              </div>
-            </swiper-slide>
-            <swiper-slide>
-             <div class="max-w-sm overflow-hidden shadow-lg">
-              <img class="w-full object-cover" src="/images/introduct3.jpeg" alt="Sunset in the mountains">
-              <div class="px-1 py-1">
-                <p class="text-gray-700 text-base">
-                  Lorem ipsum dolor sit amet 
-                </p>
-              </div>
-              <div class="px-1 pb-1">
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-              </div>
-              </div>
-            </swiper-slide>
-            <swiper-slide>
-             <div class="max-w-sm overflow-hidden shadow-lg">
-              <img class="w-full object-cover" src="/images/introduct4.jpeg" alt="Sunset in the mountains">
-              <div class="px-1 py-1">
-                <p class="text-gray-700 text-base">
-                  Lorem ipsum dolor sit amet 
-                </p>
-              </div>
-              <div class="px-1 pb-1">
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-              </div>
-              </div>
-            </swiper-slide>
-            <swiper-slide>
-             <div class="max-w-sm overflow-hidden shadow-lg">
-              <img class="w-full object-cover" src="/images/introduct5.jpeg" alt="Sunset in the mountains">
-              <div class="px-1 py-1">
-                <p class="text-gray-700 text-base">
-                  Lorem ipsum dolor sit amet 
-                </p>
-              </div>
-              <div class="px-1 pb-1">
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-              </div>
-              </div>
-            </swiper-slide>
-            <swiper-slide>
-             <div class="max-w-sm overflow-hidden shadow-lg">
-              <img class="w-full object-cover" src="/images/introduct6.jpeg" alt="Sunset in the mountains">
-              <div class="px-1 py-1">
-                <p class="text-gray-700 text-base">
-                  Lorem ipsum dolor sit amet 
-                </p>
-              </div>
-              <div class="px-1 pb-1">
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-              </div>
-              </div>
-            </swiper-slide>
-            <swiper-slide>
-             <div class="max-w-sm overflow-hidden shadow-lg">
-              <img class="w-full object-cover" src="/images/introduct7.jpeg" alt="Sunset in the mountains">
-              <div class="px-1 py-1">
-                <p class="text-gray-700 text-base">
-                  Lorem ipsum dolor sit amet 
-                </p>
-              </div>
-              <div class="px-1 pb-1">
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-              </div>
-              </div>
-            </swiper-slide>
-            <swiper-slide>
-             <div class="max-w-sm overflow-hidden shadow-lg">
-              <img class="w-full object-cover" src="/images/introduct8.jpeg" alt="Sunset in the mountains">
-              <div class="px-1 py-1">
-                <p class="text-gray-700 text-base">
-                  Lorem ipsum dolor sit amet 
-                </p>
-              </div>
-              <div class="px-1 pb-1">
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-              </div>
-              </div>
-            </swiper-slide>
-          </swiper-container>
+      <section>
+      @if (session('info'))
+        <div class="alert alert-success">
+            {{ session('info') }}
         </div>
+      @endif
+      @if (session('error'))
+        <div class="alert alert-success">
+            {{ session('error') }}
+        </div>
+      @endif
+        <form action="" method="post" enctype="multipart/form-data">
+          @csrf
+          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload file</label>
+          <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" name="img_url" id="img_url" type="file">
+          <button type="submit" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+          upload
+          </button>
+        </form>
       </section>
+     
       <section>
         <div class="container mx-auto ">
         </div>
